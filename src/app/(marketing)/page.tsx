@@ -184,170 +184,168 @@ export default function MarketingHomePage() {
 
   return (
     <div className="bg-[#050507] text-slate-100 overflow-x-hidden font-sans">
-      
-      {/* 1. HERO SECTION: Sleek dark hero with glowing typography */}
+      {/* 1. HERO SECTION: Asymmetric 2-Column Split Developer Hero */}
       <section className="pt-48 pb-32 px-6 relative border-b border-slate-900 overflow-hidden">
         {/* Neon glowing radial gradient backgrounds */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#00f0ff03_1px,transparent_1px),linear-gradient(to_bottom,#00f0ff03_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_80%,transparent_100%)] pointer-events-none" />
-        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-cyan-500/10 blur-[120px] rounded-full mix-blend-screen pointer-events-none" />
-        <div className="absolute top-20 left-1/3 w-[300px] h-[300px] bg-violet-600/10 blur-[100px] rounded-full mix-blend-screen pointer-events-none" />
+        <div className="absolute -top-40 left-1/3 w-[600px] h-[300px] bg-cyan-500/10 blur-[120px] rounded-full mix-blend-screen pointer-events-none" />
+        <div className="absolute top-20 right-1/4 w-[400px] h-[300px] bg-violet-600/10 blur-[100px] rounded-full mix-blend-screen pointer-events-none" />
 
-        <div className="max-w-6xl mx-auto text-center space-y-8 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.4 }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/5 border border-cyan-500/20 text-cyan-400 text-[10px] font-extrabold uppercase tracking-widest shadow-lg shadow-cyan-500/5 backdrop-blur-sm"
-          >
-            <Radio className="w-3.5 h-3.5 animate-pulse text-cyan-400" /> Real-time HR Gateway Online
-          </motion.div>
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center relative z-10 text-left">
+          {/* Left Column: Typography, bullets, action triggers */}
+          <div className="lg:col-span-7 space-y-8">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4 }}
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/5 border border-cyan-500/20 text-cyan-400 text-[10px] font-extrabold uppercase tracking-widest shadow-lg shadow-cyan-500/5 backdrop-blur-sm font-mono"
+            >
+              <Radio className="w-3.5 h-3.5 animate-pulse text-cyan-400" /> Real-time HR Gateway Online
+            </motion.div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1, duration: 0.5 }}
-            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[1.02] max-w-5xl mx-auto font-logo bg-gradient-to-b from-white via-slate-100 to-slate-450 bg-clip-text text-transparent"
-          >
-            Real-time Crewing <br className="hidden md:block"/>
-            <span className="bg-gradient-to-r from-cyan-400 via-violet-400 to-indigo-400 bg-clip-text text-transparent glow-text-cyan">Orchestrated.</span>
-          </motion.h1>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1, duration: 0.5 }}
+              className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.08] font-logo text-white"
+            >
+              The Real-Time <br/>
+              <span className="bg-gradient-to-r from-cyan-400 via-violet-400 to-indigo-400 bg-clip-text text-transparent glow-text-cyan">Orchestration Layer</span> <br/>
+              for Industrial Crews
+            </motion.h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            className="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto font-medium leading-relaxed"
-          >
-            A high-performance SDK and dashboard to verify licenses, calculate collective bargaining scales, and automate dispatch networks for heavy industry.
-          </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className="text-base text-slate-400 leading-relaxed font-medium max-w-xl"
+            >
+              Verify credentials, sync collective bargaining agreements, and automate terminal gate dispatch networks via REST and WebSocket telemetry API.
+            </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.5 }}
-            className="flex flex-col sm:flex-row justify-center items-center gap-4 pt-4"
-          >
-            <Link href="/contact" className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-cyan-500 to-violet-500 hover:from-cyan-400 hover:to-violet-400 text-black font-extrabold rounded-lg shadow-lg shadow-cyan-500/10 transition-all text-base cursor-pointer text-center">
-              Request API Access
-            </Link>
-            <a href="#playground" className="w-full sm:w-auto px-8 py-4 bg-slate-950/80 border border-slate-900 text-slate-350 font-bold rounded-lg hover:bg-slate-900/60 hover:text-white transition-all text-base cursor-pointer text-center backdrop-blur-sm">
-              Read Developer Docs
-            </a>
-          </motion.div>
-        </div>
-
-        {/* Live Websocket Console widget */}
-        <div className="max-w-5xl mx-auto mt-24 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.6 }}
-            className="bg-slate-950/90 rounded-2xl border border-slate-900 shadow-[0_20px_50px_rgba(0,0,0,0.8)] overflow-hidden backdrop-blur-md"
-          >
-            {/* Terminal Header */}
-            <div className="bg-black/90 px-6 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-slate-900">
+            {/* Feature Checklist */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.25, duration: 0.5 }}
+              className="space-y-3.5 text-xs font-semibold text-slate-350"
+            >
               <div className="flex items-center gap-3">
-                <div className="flex gap-1.5">
-                  <div className="w-2.5 h-2.5 rounded-full bg-slate-800" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-slate-800" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-slate-800" />
+                <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0" />
+                <span>Direct Board Audits (OSHA & NCCCO checks in &lt; 15ms)</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0" />
+                <span>Union CBA Payroll Fringe Matching (100% automated calculations)</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0" />
+                <span>RFID Badge cascade (instant gate access syncing on clearance)</span>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+              className="flex flex-col sm:flex-row gap-4 pt-2"
+            >
+              <Link href="/contact" className="w-full sm:w-auto px-7 py-3.5 bg-gradient-to-r from-cyan-500 to-violet-500 hover:from-cyan-400 hover:to-violet-400 text-black font-extrabold rounded-lg shadow-lg shadow-cyan-500/10 text-xs text-center transition-all">
+                Request API Key
+              </Link>
+              <a href="#playground" className="w-full sm:w-auto px-7 py-3.5 bg-slate-950/85 border border-slate-900 text-slate-350 font-bold rounded-lg hover:bg-slate-900/60 hover:text-white transition-all text-xs text-center backdrop-blur-sm">
+                View Developer Docs
+              </a>
+            </motion.div>
+          </div>
+
+          {/* Right Column: Sleek Sandbox visualizer telemetry card */}
+          <div className="lg:col-span-5 w-full">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+              className="bg-slate-950/90 rounded-2xl border border-slate-900 shadow-[0_20px_50px_rgba(0,0,0,0.8)] overflow-hidden backdrop-blur-md"
+            >
+              {/* Telemetry Header */}
+              <div className="bg-black/90 px-6 py-4 flex justify-between items-center border-b border-slate-900">
+                <div className="flex items-center gap-2">
+                  <div className="flex gap-1.5">
+                    <div className="w-2 h-2 rounded-full bg-slate-800" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-slate-800" />
+                  </div>
+                  <span className="text-[10px] font-extrabold uppercase tracking-widest text-cyan-400 font-mono flex items-center gap-1.5 ml-1">
+                    <Server className="w-3.5 h-3.5" /> API Gateway Nodes
+                  </span>
                 </div>
-                <div className="h-4 border-l border-slate-900" />
-                <span className="text-[10px] font-extrabold uppercase tracking-widest text-cyan-400 font-mono flex items-center gap-1.5">
-                  <Terminal className="w-3.5 h-3.5" /> Crestmind Gateway Console v1.0.8
-                </span>
+                <div className="flex items-center gap-1.5 text-[8px] font-mono text-cyan-400 font-bold bg-cyan-500/5 border border-cyan-500/20 px-2 py-0.5 rounded-full">
+                  WS_CONNECTED
+                </div>
               </div>
-              <div className="relative w-full sm:w-64">
-                <Search className="w-3.5 h-3.5 text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
-                <input 
-                  type="text" 
-                  value={boardSearch}
-                  onChange={(e) => setBoardSearch(e.target.value)}
-                  placeholder="Filter active websocket telemetry..."
-                  className="w-full bg-slate-950 border border-slate-900 text-slate-350 text-xs px-9 py-1.5 rounded-lg focus:outline-none focus:border-cyan-500"
-                />
-              </div>
-            </div>
 
-            {/* Terminal Tabs */}
-            <div className="bg-slate-950 px-6 py-2.5 border-b border-slate-900 flex gap-4 overflow-x-auto">
-              {[
-                { id: "baytown", label: "refinery.baytown.crestmind" },
-                { id: "permian", label: "pipeline.odessa.crestmind" },
-                { id: "offshore", label: "offshore.block5.crestmind" }
-              ].map(tab => (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveBoardTab(tab.id as any)}
-                  className={`text-[10px] font-mono font-bold px-3 py-1.5 rounded transition-all cursor-pointer border ${
-                    activeBoardTab === tab.id 
-                      ? "bg-cyan-500/10 text-cyan-400 border-cyan-500/25" 
-                      : "text-slate-500 border-transparent hover:text-slate-300"
-                  }`}
-                >
-                  {tab.label}
-                </button>
-              ))}
-            </div>
-
-            {/* Terminal Table */}
-            <div className="overflow-x-auto max-h-[300px] bg-slate-950/60">
-              <table className="w-full text-left text-xs border-collapse font-mono">
-                <thead>
-                  <tr className="border-b border-slate-900 text-slate-550 font-bold uppercase text-[9px] tracking-wider bg-slate-950/30">
-                    <th className="px-6 py-3">Dispatched Node</th>
-                    <th className="px-6 py-3">Trade Roster</th>
-                    <th className="px-6 py-3">CBA Union</th>
-                    <th className="px-6 py-3">Gate Handshake</th>
-                    <th className="px-6 py-3">Geographic Latency</th>
-                    <th className="px-6 py-3">HSE Status</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-900/60 text-slate-400 text-[11px]">
-                  {activeBoardRows.length > 0 ? (
-                    activeBoardRows.map((row, i) => (
-                      <tr key={i} className="hover:bg-slate-900/20 transition-colors">
-                        <td className="px-6 py-4 font-bold text-slate-200 flex items-center gap-3">
-                          <div className="w-6 h-6 rounded bg-slate-900 text-cyan-400 flex items-center justify-center font-extrabold text-[10px] border border-slate-800">{row.name.charAt(0)}</div>
-                          {row.name}
-                        </td>
-                        <td className="px-6 py-4">{row.role}</td>
-                        <td className="px-6 py-4 text-slate-500">{row.local}</td>
-                        <td className="px-6 py-4 text-slate-550">{row.time}</td>
-                        <td className="px-6 py-4 text-slate-500 flex items-center gap-1 font-mono text-[10px] mt-1">
-                          <MapPin className="w-3 h-3 text-cyan-400" /> {row.coordinate}
-                        </td>
-                        <td className="px-6 py-4">
-                          <span className={`px-2 py-0.5 rounded-full text-[9px] font-bold border ${
-                            row.status === "Cleared" || row.status === "On-Site"
-                              ? "bg-cyan-500/10 text-cyan-400 border-cyan-500/20"
-                              : "bg-violet-500/10 text-violet-400 border-violet-500/20"
-                          }`}>
-                            {row.status}
-                          </span>
-                        </td>
-                      </tr>
-                    ))
-                  ) : (
-                    <tr>
-                      <td colSpan={6} className="text-center py-10 text-slate-600 font-bold uppercase tracking-widest text-[10px]">No active telemetry nodes match filter</td>
+              {/* Telemetry Endpoint List Table */}
+              <div className="p-4 bg-slate-950/40 font-mono text-[10px]">
+                <table className="w-full text-left border-collapse">
+                  <thead>
+                    <tr className="border-b border-slate-900 text-slate-550 font-bold uppercase text-[8px] tracking-wider pb-2">
+                      <th className="pb-2 font-bold">Node Endpoint</th>
+                      <th className="pb-2 font-bold">CBA Audit</th>
+                      <th className="pb-2 font-bold">Latency</th>
+                      <th className="pb-2 font-bold">HSE</th>
                     </tr>
-                  )}
-                </tbody>
-              </table>
-            </div>
+                  </thead>
+                  <tbody className="divide-y divide-slate-900/60 text-slate-400">
+                    <tr className="hover:bg-slate-900/25 transition-colors">
+                      <td className="py-2.5 font-bold text-slate-200">houston.gateway.node</td>
+                      <td className="py-2.5">Local 450</td>
+                      <td className="py-2.5 text-cyan-400">12ms</td>
+                      <td className="py-2.5"><span className="text-cyan-400 bg-cyan-500/5 px-1.5 py-0.5 border border-cyan-500/10 rounded-full text-[8px]">OK</span></td>
+                    </tr>
+                    <tr className="hover:bg-slate-900/25 transition-colors">
+                      <td className="py-2.5 font-bold text-slate-200">odessa.gateway.node</td>
+                      <td className="py-2.5">Local 15</td>
+                      <td className="py-2.5 text-cyan-400">15ms</td>
+                      <td className="py-2.5"><span className="text-cyan-400 bg-cyan-500/5 px-1.5 py-0.5 border border-cyan-500/10 rounded-full text-[8px]">OK</span></td>
+                    </tr>
+                    <tr className="hover:bg-slate-900/25 transition-colors">
+                      <td className="py-2.5 font-bold text-slate-200">lafayette.gateway.node</td>
+                      <td className="py-2.5">Non-Union</td>
+                      <td className="py-2.5 text-violet-400">19ms</td>
+                      <td className="py-2.5"><span className="text-cyan-400 bg-cyan-500/5 px-1.5 py-0.5 border border-cyan-500/10 rounded-full text-[8px]">OK</span></td>
+                    </tr>
+                  </tbody>
+                </table>
 
-            {/* Terminal Footer Info */}
-            <div className="bg-black/90 px-6 py-3.5 border-t border-slate-900 flex items-center justify-between text-[10px] font-mono font-bold text-slate-550">
-              <div className="flex items-center gap-2">
-                <Clock className="w-3.5 h-3.5 text-cyan-400" /> WebSocket telemetry synchronized
+                {/* Animated wave telemetry line graph */}
+                <div className="border-t border-slate-900 pt-4 mt-4">
+                  <div className="flex justify-between items-center text-[8px] text-slate-550 font-bold uppercase tracking-wider mb-2 font-mono">
+                    <span>Active Telemetry Signal Pulse</span>
+                    <span className="text-cyan-400 flex items-center gap-1"><span className="w-1.5 h-1.5 rounded-full bg-cyan-450 animate-ping"></span> 99.98% SLA</span>
+                  </div>
+                  <div className="flex gap-0.5 items-end h-10 w-full px-1">
+                    {[12, 24, 38, 16, 28, 48, 64, 32, 18, 40, 56, 84, 32, 44, 20, 12, 24, 76, 48, 16, 28, 40, 64, 8].map((h, idx) => (
+                      <div 
+                        key={idx} 
+                        className="flex-1 bg-cyan-500/25 hover:bg-cyan-500/50 rounded-t transition-colors cursor-pointer" 
+                        style={{ height: `${h}%` }}
+                      />
+                    ))}
+                  </div>
+                </div>
+
               </div>
-              <div className="flex items-center gap-2">
-                Roster: <span className="text-cyan-400">1,420 Active Dispatchers</span>
-                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping"></span>
+
+              {/* Telemetry Footer */}
+              <div className="bg-black/90 px-6 py-3.5 border-t border-slate-900 flex items-center justify-between text-[9px] font-mono font-bold text-slate-550">
+                <div className="flex items-center gap-2">
+                  <Clock className="w-3.5 h-3.5 text-cyan-400" /> WebSocket streams active
+                </div>
+                <div>
+                  Synced Nodes: <span className="text-cyan-400">4,820</span>
+                </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
